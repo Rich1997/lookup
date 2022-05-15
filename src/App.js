@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from "react";
+import Hero from "./components/Hero";
+import Searchbar from "./components/Searchbar";
+import Navbar from "./components/Navbar";
+import Results from "./components/Results";
+
+export const InputContext = createContext();
+export const ThemeContext = createContext();
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [darkMode, setDarkMode] = useState(true);
+    const [inputValue, setInputValue] = useState("");
+
+    const value = { inputValue, setInputValue };
+    const dark = { darkMode, setDarkMode };
+
+    return (
+        <InputContext.Provider value={value}>
+            <ThemeContext.Provider value={dark}>
+                <div className={`w-full min-h-fit h-full ${darkMode ? "dark" : ""}`}>
+                    <div className="App antialiased w-screen min-h-fit h-full overflow-auto dark:bg-zinc-900 bg-zinc-50 selection:bg-rose-200 dark:selection:text-zinc-800 tracking-tight">
+                        <Navbar />
+                        <Hero />
+                        <Searchbar />
+                        <Results />
+                    </div>
+                </div>
+            </ThemeContext.Provider>
+        </InputContext.Provider>
+    );
 }
 
 export default App;
