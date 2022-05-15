@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/lookUp/static/css/main.d7e307de.css",
+    "main.js": "/lookUp/static/js/main.d87c05b4.js",
+    "static/media/Inter.var.woff2": "/lookUp/static/media/Inter.var.c2fe3cb2b7c746f7966a.woff2",
+    "static/media/Inter-italic.var.woff2": "/lookUp/static/media/Inter-italic.var.30807be7abc48ba8c73c.woff2",
+    "static/media/Satoshi-Variable.woff2": "/lookUp/static/media/Satoshi-Variable.353a66cdd8922bb63107.woff2",
+    "index.html": "/lookUp/index.html",
+    "main.d7e307de.css.map": "/lookUp/static/css/main.d7e307de.css.map",
+    "main.d87c05b4.js.map": "/lookUp/static/js/main.d87c05b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d7e307de.css",
+    "static/js/main.d87c05b4.js"
+  ]
+}
