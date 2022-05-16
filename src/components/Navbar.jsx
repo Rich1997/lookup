@@ -15,7 +15,7 @@ const Navbar = () => {
 
     return (
         <nav className="px-8 pb-0 pt-8 flex items-center justify-between md:justify-center flex-wrap-reverse gap-8 w-full dark:text-zinc-50 text-zinc-800 duration-300">
-            <div className="max-w-[32rem] flex gap-16 items-center">
+            <div className="max-w-[32rem] flex md:gap-16 items-center">
                 <div
                     className="p-2 cursor-pointer hover:bg-slate-400/20 hover:scale-110 rounded-full duration-300 hidden md:block"
                     onClick={setDarkModeHandler}
@@ -23,9 +23,11 @@ const Navbar = () => {
                     {darkMode ? <Sun /> : <Moon />}
                 </div>
                 {darkMode ? <DarkModeLogo /> : <LightModeLogo />}
-                <div className="p-2 cursor-pointer hover:bg-slate-400/20 hover:scale-110 rounded-full duration-300 hidden md:block">
-                    <GitHub />
-                </div>
+                <a href="https://github.com/Rich1997/lookup" target="_blank" rel="noopener noreferrer">
+                    <div className="p-2 cursor-pointer hover:bg-slate-400/20 hover:scale-110 rounded-full duration-300 hidden md:block">
+                        <GitHub />
+                    </div>
+                </a>
             </div>
             <div className="flex items-center gap-4 md:hidden duration-300 cursor-pointer">
                 <div
@@ -34,9 +36,11 @@ const Navbar = () => {
                 >
                     {darkMode ? <Sun /> : <Moon />}
                 </div>
-                <div className="cursor-pointer hover:bg-slate-400/20 hover:scale-110 rounded-full">
-                    <GitHub />
-                </div>
+                <a href="https://github.com/Rich1997/lookup" target="_blank" rel="noopener noreferrer">
+                    <div className="cursor-pointer hover:bg-slate-400/20 hover:scale-110 rounded-full">
+                        <GitHub />
+                    </div>
+                </a>
             </div>
         </nav>
     );
