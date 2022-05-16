@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    position: fixed;
+}
+
 html,
 body {
     margin: 0;
