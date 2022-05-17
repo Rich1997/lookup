@@ -57,7 +57,7 @@ const Results = () => {
                     <div className="font-bold italic">{response.length > 1 ? index + 1 : ""}</div>
                     <div>
                         {item.meanings.map((meaning, index) => (
-                            <div key={index} className="">
+                            <div key={index}>
                                 <div className="mb-2 font-bold italic">
                                     {meaning.partOfSpeech && meaning.partOfSpeech}
                                 </div>
@@ -124,7 +124,7 @@ const Results = () => {
         <>
             <div className="p-8">
                 {response && (
-                    <div className="max-w-md dark:text-zinc-50 text-zinc-800 mx-auto ">
+                    <div className="max-w-md dark:text-zinc-50 text-zinc-800 mx-auto">
                         <div className="flex gap-4 items-center mb-4">
                             {src !== "" ? (
                                 <div
