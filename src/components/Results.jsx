@@ -57,7 +57,7 @@ const Results = () => {
                     <div className="font-bold italic">{response.length > 1 ? index + 1 : ""}</div>
                     <div>
                         {item.meanings.map((meaning, index) => (
-                            <div key={index} className="mb-4">
+                            <div key={index} className="">
                                 <div className="mb-2 font-bold italic">
                                     {meaning.partOfSpeech && meaning.partOfSpeech}
                                 </div>
@@ -67,7 +67,7 @@ const Results = () => {
                                             <div key={index} className="ml-2 mb-2 dark:text-zinc-300">
                                                 {items.definition}
                                             </div>
-                                            <div className="mb-4">
+                                            <div className="pb-4">
                                                 {items.synonyms && items.synonyms.length > 0 ? (
                                                     <details className="ml-2">
                                                         <summary className="mb-2 font-semibold text-purple-400 cursor-pointer">
