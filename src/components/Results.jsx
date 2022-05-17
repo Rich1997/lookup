@@ -52,7 +52,7 @@ const Results = () => {
     const defsList =
         response &&
         response.map((item, index) => (
-            <>
+            <div key={index}>
                 <div className={`flex ${response.length > 1 ? "gap-2" : " "}`}>
                     <div className="font-bold italic">{response.length > 1 ? index + 1 : ""}</div>
                     <div>
@@ -63,10 +63,8 @@ const Results = () => {
                                 </div>
                                 {meaning.definitions &&
                                     meaning.definitions.map((items, index) => (
-                                        <>
-                                            <div key={index} className="ml-2 mb-2 dark:text-zinc-300">
-                                                {items.definition}
-                                            </div>
+                                        <div key={index}>
+                                            <div className="ml-2 mb-2 dark:text-zinc-300">{items.definition}</div>
                                             <div className="pb-4">
                                                 {items.synonyms && items.synonyms.length > 0 ? (
                                                     <details className="ml-2">
@@ -113,13 +111,13 @@ const Results = () => {
                                                     ""
                                                 )}
                                             </div>
-                                        </>
+                                        </div>
                                     ))}
                             </div>
                         ))}
                     </div>
                 </div>
-            </>
+            </div>
         ));
 
     return (
