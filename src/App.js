@@ -8,7 +8,17 @@ export const InputContext = createContext();
 export const ThemeContext = createContext();
 
 function App() {
-    const [darkMode, setDarkMode] = useState(true);
+    const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
+    const [darkMode, setDarkMode] = useState(
+        localStorage.getItem("darkModeKey") === null
+            ? darkTheme.matches
+                ? true
+                : false
+            : localStorage.getItem("darkModeKey") === "true"
+            ? true
+            : false
+    );
+
     const [inputValue, setInputValue] = useState("");
 
     const value = { inputValue, setInputValue };

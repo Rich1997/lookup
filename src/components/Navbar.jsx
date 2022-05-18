@@ -10,6 +10,7 @@ const Navbar = () => {
     const { darkMode, setDarkMode } = useContext(ThemeContext);
 
     const setDarkModeHandler = () => {
+        localStorage.setItem("darkModeKey", !darkMode);
         setDarkMode(!darkMode);
     };
 
