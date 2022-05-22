@@ -64,15 +64,16 @@ const Results = () => {
                                 {meaning.definitions &&
                                     meaning.definitions.map((items, index) => (
                                         <div key={index}>
-                                            <div className="ml-2 mb-2 dark:text-zinc-300">{items.definition}</div>
-                                            <div className="pb-4">
+                                            <div className="ml-2 mb-4 dark:text-zinc-300">
+                                                {items.definition}
+
                                                 {items.synonyms && items.synonyms.length > 0 ? (
                                                     <details className="ml-2">
-                                                        <summary className="mb-2 font-semibold text-purple-400 cursor-pointer">
+                                                        <summary className="font-semibold text-purple-400 cursor-pointer">
                                                             Synonyms
                                                         </summary>
                                                         <div className="ml-2">
-                                                            <ul className="px-2 pb-2 flex flex-wrap gap-2">
+                                                            <ul className="px-2 py-2 flex flex-wrap gap-2">
                                                                 {items.synonyms &&
                                                                     items.synonyms.map((synonym, index) => (
                                                                         <li
@@ -90,11 +91,11 @@ const Results = () => {
                                                 )}
                                                 {items.antonyms && items.antonyms.length > 0 ? (
                                                     <details className="ml-2">
-                                                        <summary className="mb-2 font-semibold text-rose-300 cursor-pointer">
+                                                        <summary className="font-semibold text-rose-300 cursor-pointer">
                                                             Antonyms
                                                         </summary>
                                                         <div className="ml-2">
-                                                            <ul className="px-2 pb-2 flex flex-wrap gap-2">
+                                                            <ul className="px-2 py-2 flex flex-wrap gap-2">
                                                                 {items.antonyms &&
                                                                     items.antonyms.map((antonym, index) => (
                                                                         <li
