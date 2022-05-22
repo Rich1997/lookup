@@ -63,55 +63,53 @@ const Results = () => {
                                 </div>
                                 {meaning.definitions &&
                                     meaning.definitions.map((items, index) => (
-                                        <div key={index}>
-                                            <div className="ml-2 mb-4 dark:text-zinc-300">
-                                                {items.definition}
+                                        <div key={index} className="ml-2 mb-4 dark:text-zinc-300">
+                                            {items.definition}
 
-                                                {items.synonyms && items.synonyms.length > 0 ? (
-                                                    <details className="ml-2">
-                                                        <summary className="font-semibold text-purple-400 cursor-pointer">
-                                                            Synonyms
-                                                        </summary>
-                                                        <div className="ml-2">
-                                                            <ul className="px-2 py-2 flex flex-wrap gap-2">
-                                                                {items.synonyms &&
-                                                                    items.synonyms.map((synonym, index) => (
-                                                                        <li
-                                                                            key={index}
-                                                                            className="px-2 border-2 dark:border-zinc-600 border-zinc-200 rounded-lg dark:text-zinc-300"
-                                                                        >
-                                                                            {synonym}
-                                                                        </li>
-                                                                    ))}
-                                                            </ul>
-                                                        </div>
-                                                    </details>
-                                                ) : (
-                                                    ""
-                                                )}
-                                                {items.antonyms && items.antonyms.length > 0 ? (
-                                                    <details className="ml-2">
-                                                        <summary className="font-semibold text-rose-300 cursor-pointer">
-                                                            Antonyms
-                                                        </summary>
-                                                        <div className="ml-2">
-                                                            <ul className="px-2 py-2 flex flex-wrap gap-2">
-                                                                {items.antonyms &&
-                                                                    items.antonyms.map((antonym, index) => (
-                                                                        <li
-                                                                            key={index}
-                                                                            className="px-2 border-2 dark:border-zinc-600 border-zinc-200 rounded-lg dark:text-zinc-300"
-                                                                        >
-                                                                            {antonym}
-                                                                        </li>
-                                                                    ))}
-                                                            </ul>
-                                                        </div>
-                                                    </details>
-                                                ) : (
-                                                    ""
-                                                )}
-                                            </div>
+                                            {items.synonyms && items.synonyms.length > 0 ? (
+                                                <details className="ml-2">
+                                                    <summary className="font-semibold text-purple-400 cursor-pointer">
+                                                        Synonyms
+                                                    </summary>
+                                                    <div className="ml-2">
+                                                        <ul className="px-2 py-2 flex flex-wrap gap-2">
+                                                            {items.synonyms &&
+                                                                items.synonyms.map((synonym, index) => (
+                                                                    <li
+                                                                        key={index}
+                                                                        className="px-2 border-2 dark:border-zinc-600 border-zinc-200 rounded-lg dark:text-zinc-300"
+                                                                    >
+                                                                        {synonym}
+                                                                    </li>
+                                                                ))}
+                                                        </ul>
+                                                    </div>
+                                                </details>
+                                            ) : (
+                                                ""
+                                            )}
+                                            {items.antonyms && items.antonyms.length > 0 ? (
+                                                <details className="ml-2">
+                                                    <summary className="font-semibold text-rose-300 cursor-pointer">
+                                                        Antonyms
+                                                    </summary>
+                                                    <div className="ml-2">
+                                                        <ul className="px-2 py-2 flex flex-wrap gap-2">
+                                                            {items.antonyms &&
+                                                                items.antonyms.map((antonym, index) => (
+                                                                    <li
+                                                                        key={index}
+                                                                        className="px-2 border-2 dark:border-zinc-600 border-zinc-200 rounded-lg dark:text-zinc-300"
+                                                                    >
+                                                                        {antonym}
+                                                                    </li>
+                                                                ))}
+                                                        </ul>
+                                                    </div>
+                                                </details>
+                                            ) : (
+                                                ""
+                                            )}
                                         </div>
                                     ))}
                             </div>
