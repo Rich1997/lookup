@@ -137,7 +137,7 @@ const Results = () => {
                                 ""
                             )}
                             <div className="word-and-phonetics">
-                                <div className="word font-satoshi font-black text-xl">
+                                <div className="word font-satoshi font-black text-xl break-all">
                                     {response && response[0].word}
                                 </div>
                                 <div className="phonetics tracking-wide">
