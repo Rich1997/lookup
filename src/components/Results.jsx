@@ -44,9 +44,9 @@ const Results = () => {
     }
 
     const p = response && response[0].phonetics.filter((i) => i.text !== undefined && i.text !== "");
-    const phonetic = p && p.length > 0 ? p[0].text : "";
+    const phonetic = p && p.length ? p[0].text : "";
     const a = response && response[0].phonetics.filter((i) => i.audio !== undefined && i.audio !== "");
-    const src = a && a.length > 0 ? a[0].audio : "";
+    const src = a && a.length ? a[0].audio : "";
     const audio = new Audio(src);
 
     const defsList =
@@ -66,7 +66,7 @@ const Results = () => {
                                         <div key={index} className="ml-2 mb-4 dark:text-zinc-300">
                                             {items.definition}
 
-                                            {items.synonyms && items.synonyms.length > 0 ? (
+                                            {items.synonyms && items.synonyms.length ? (
                                                 <details className="ml-2">
                                                     <summary className="font-semibold text-purple-400 cursor-pointer">
                                                         Synonyms
@@ -88,7 +88,7 @@ const Results = () => {
                                             ) : (
                                                 ""
                                             )}
-                                            {items.antonyms && items.antonyms.length > 0 ? (
+                                            {items.antonyms && items.antonyms.length ? (
                                                 <details className="ml-2">
                                                     <summary className="font-semibold text-rose-300 cursor-pointer">
                                                         Antonyms
