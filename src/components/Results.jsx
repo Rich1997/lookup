@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import Speaker from "../assets/icons/Speaker";
 import { InputContext } from "../App";
+import Details from "./Details";
 
 axios.defaults.baseURL = "https://api.dictionaryapi.dev/api/v2/entries/en";
 
@@ -67,46 +68,17 @@ const Results = () => {
                                             {items.definition}
 
                                             {items.synonyms && items.synonyms.length ? (
-                                                <details className="ml-2">
-                                                    <summary className="font-semibold text-purple-400 cursor-pointer">
-                                                        Synonyms
-                                                    </summary>
-                                                    <div className="ml-2">
-                                                        <ul className="px-2 py-2 flex flex-wrap gap-2">
-                                                            {items.synonyms &&
-                                                                items.synonyms.map((synonym, index) => (
-                                                                    <li
-                                                                        key={index}
-                                                                        className="px-2 border-2 dark:border-zinc-600 border-zinc-200 rounded-lg dark:text-zinc-300"
-                                                                    >
-                                                                        {synonym}
-                                                                    </li>
-                                                                ))}
-                                                        </ul>
-                                                    </div>
-                                                </details>
+                                                <Details detail={items.synonyms} name="synonyms" />
                                             ) : (
                                                 ""
                                             )}
                                             {items.antonyms && items.antonyms.length ? (
-                                                <details className="ml-2">
-                                                    <summary className="font-semibold text-rose-300 cursor-pointer">
-                                                        Antonyms
-                                                    </summary>
-                                                    <div className="ml-2">
-                                                        <ul className="px-2 py-2 flex flex-wrap gap-2">
-                                                            {items.antonyms &&
-                                                                items.antonyms.map((antonym, index) => (
-                                                                    <li
-                                                                        key={index}
-                                                                        className="px-2 border-2 dark:border-zinc-600 border-zinc-200 rounded-lg dark:text-zinc-300"
-                                                                    >
-                                                                        {antonym}
-                                                                    </li>
-                                                                ))}
-                                                        </ul>
-                                                    </div>
-                                                </details>
+                                                <Details detail={items.antonyms} name="antonyms" />
+                                            ) : (
+                                                ""
+                                            )}
+                                            {items.example && items.example.length ? (
+                                                <Details detail={items.example} name="example" />
                                             ) : (
                                                 ""
                                             )}
